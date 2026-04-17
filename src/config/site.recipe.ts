@@ -2,7 +2,7 @@ import type { SiteRecipe } from '@/design/factory/recipe-types'
 
 export const SITE_RECIPE: SiteRecipe = {
   productFamily: 'editorial',
-  themePack: 'magazine-contrast',
+  themePack: 'medium-journal',
   homepageTemplate: 'article-home',
   navbarTemplate: 'editorial-bar',
   footerTemplate: 'editorial-footer',
@@ -10,7 +10,7 @@ export const SITE_RECIPE: SiteRecipe = {
   primaryTask: 'article',
   enabledTasks: ['article'],
   taskTemplates: {
-    article: 'article-journal',
+    article: 'article-editorial',
   },
   manualOverrides: {
     navbar: false,
