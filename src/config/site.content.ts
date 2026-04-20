@@ -2,107 +2,118 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Article platform',
+    tagline: 'A quiet publication',
   },
   footer: {
-    tagline: 'Article platform',
+    tagline: 'Slow reading, intentional living',
   },
   hero: {
-    badge: 'Latest stories and visuals',
-    title: ['A thoughtful home for', 'stories, visuals, and discovery.'],
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    badge: 'New essays, weekly',
+    title: ['Writing for a slower,', 'more intentional kind of day.'],
+    description:
+      'Mindful Lotus is a reading-first publication of essays on attention, craft, nature, and the inner life — delivered with generous margins and none of the noise.',
     primaryCta: {
-      label: 'Read latest posts',
+      label: 'Open the latest issue',
       href: '/articles',
     },
     secondaryCta: {
-      label: 'Explore visuals',
-      href: '/images',
+      label: 'Read the manifesto',
+      href: '/about',
     },
-    searchPlaceholder: 'Search stories, visuals, listings, and more',
-    focusLabel: 'Focus',
-    featureCardBadge: 'latest cover rotation',
-    featureCardTitle: 'Latest posts shape the visual identity of the homepage.',
+    searchPlaceholder: 'Search essays, authors, and collections',
+    focusLabel: 'This issue',
+    featureCardBadge: 'Cover essay',
+    featureCardTitle: 'A long essay on how to sit with a sentence before moving on to the next.',
     featureCardDescription:
-      'Recent images and stories stay at the center of the experience without changing any core platform behavior.',
+      'Cover features rotate every Sunday. Older essays remain in the archive and hold their original reading experience.',
   },
   home: {
     metadata: {
-      title: 'Stories, visuals, and discoverable content',
-      description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
-      openGraphTitle: 'Stories, visuals, and discoverable content',
+      title: 'Essays on attention, craft, and slower living',
+      description:
+        'Mindful Lotus is a quiet, reading-first publication of essays on attention, craft, and a slower kind of day.',
+      openGraphTitle: 'Mindful Lotus — essays on attention and slow living',
       openGraphDescription:
-        'Discover articles, visual posts, and connected content through a calmer reading-first experience.',
-      keywords: ['story platform', 'article site', 'visual content', 'content discovery'],
+        'A reading-first publication of essays on presence, craft, and a quieter way to spend an afternoon.',
+      keywords: [
+        'mindful reading',
+        'slow publication',
+        'essays on attention',
+        'long-form writing',
+        'mindfulness',
+        'contemplative essays',
+      ],
     },
-    introBadge: 'About the platform',
-    introTitle: 'Built for reading, browsing, and connecting different kinds of content.',
+    introBadge: 'About the publication',
+    introTitle: 'A small, independent publication built for the kind of reader who still underlines paragraphs.',
     introParagraphs: [
-      'This site brings together article-style reading, visual browsing, and structured discovery so visitors can move naturally between different content types.',
-      'Instead of separating stories, visuals, and supporting resources into disconnected surfaces, the platform keeps them connected in one place with consistent navigation and easier exploration.',
-      'Whether someone starts with a story, an image-led post, a listing, or a resource page, they can keep discovering related content without friction.',
+      'Mindful Lotus publishes essays that reward patience. Every piece is edited for cadence, not clicks — we would rather you finish one essay than skim ten.',
+      'The library grows slowly: a new cover essay most Sundays, a shorter letter midweek, and a seasonal anthology pulled from the archive every quarter.',
+      'There are no pop-ups, no recommendation feeds, and no infinite scroll. Just writing, a table of contents, and time enough to read it.',
     ],
-    sideBadge: 'At a glance',
+    sideBadge: 'Inside this issue',
     sidePoints: [
-      'Reading-first homepage with stronger emphasis on stories and imagery.',
-      'Connected sections for articles, visuals, listings, and supporting resources.',
-      'Cleaner browsing rhythm designed to make exploration feel easier.',
-      'Lightweight interactions that keep the experience fast and readable.',
+      'Cover essay refreshed every Sunday morning.',
+      'Midweek letter from the editor, shorter and quieter.',
+      'A seasonal anthology from the archive, four times a year.',
+      'Annotated margins, pull quotes, and room to think between paragraphs.',
     ],
     primaryLink: {
-      label: 'Browse articles',
+      label: 'Open the archive',
       href: '/articles',
     },
     secondaryLink: {
-      label: 'See visuals',
-      href: '/images',
+      label: 'Read about the editors',
+      href: '/about',
     },
   },
   cta: {
-    badge: 'Start exploring',
-    title: 'Explore articles, visuals, and resources through one connected experience.',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    badge: 'Subscribe, quietly',
+    title: 'One essay in your inbox each Sunday. Nothing in between.',
+    description:
+      'No promotional emails, no tracking pixels, no resurfaced old posts. A single link to the new cover essay, sent once a week.',
     primaryCta: {
-      label: 'Read latest posts',
-      href: '/articles',
+      label: 'Join the reading list',
+      href: '/register',
     },
     secondaryCta: {
-      label: 'Contact Sales',
-      href: '/contact',
+      label: 'Read the current issue',
+      href: '/articles',
     },
   },
-  taskSectionHeading: 'Latest {label}',
-  taskSectionDescriptionSuffix: 'Browse the newest posts in this section.',
+  taskSectionHeading: 'Recent {label}',
+  taskSectionDescriptionSuffix: 'The most recently published essays in the archive.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
   article: {
-    title: 'Articles and stories',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Essays & long-form writing',
+    description:
+      'Browse the Mindful Lotus archive of essays on attention, craft, nature, and the inner life.',
   },
   listing: {
-    title: 'Listings and discoverable pages',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Directory (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
   classified: {
-    title: 'Classifieds and announcements',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Notices (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
   image: {
-    title: 'Images and visual posts',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Plates & photography (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
   profile: {
-    title: 'Profiles and public pages',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Contributors (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
   sbm: {
-    title: 'Curated links and saved resources',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Reading list (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
   pdf: {
-    title: 'PDFs and downloadable resources',
-    description: 'A Article site for Mindful Lotus, built for clean discovery and structured publishing.',
+    title: 'Printable editions (archived surface)',
+    description: 'This surface is retained for compatibility; the Mindful Lotus publication focuses on essays.',
   },
 }
 
@@ -110,134 +121,81 @@ export const taskIntroCopy: Record<
   TaskKey,
   { title: string; paragraphs: string[]; links: { label: string; href: string }[] }
 > = {
-  listing: {
-    title: 'Listings, services, and structured pages',
+  article: {
+    title: 'Essays worth the quiet half-hour they ask for.',
     paragraphs: [
-      'Explore listings, services, brands, and discoverable pages across categories. Each entry is organized to make browsing clearer and help visitors quickly understand what a post offers.',
-      'Listings connect naturally with articles, images, resources, and other content types so supporting information stays easy to reach from the same platform.',
-      'Browse by category to compare posts in context, discover related content, and move between formats without losing your place.',
+      'The Mindful Lotus archive is a slow river. Pieces are filed by season, not by trending topic, and the reading rhythm is set by the writing — not a feed algorithm.',
+      'Every essay is hand-edited for pacing, with pull quotes, margin notes, and enough white space to think. You will not find ranked lists, engagement nudges, or five-minute-read labels.',
+      'Use the archive to wander. Pick an essay, read it slowly, and come back another day.',
     ],
     links: [
-      { label: 'Read articles', href: '/articles' },
-      { label: 'Explore classifieds', href: '/classifieds' },
-      { label: 'View profiles', href: '/profile' },
+      { label: 'The current issue', href: '/articles' },
+      { label: 'About the editors', href: '/about' },
+      { label: 'Write to the desk', href: '/contact' },
     ],
   },
-  article: {
-    title: 'Articles, stories, and long-form reading',
+  listing: {
+    title: 'Archived surface',
     paragraphs: [
-      'This section is built for stories, explainers, guides, and long-form reading across topics and interests.',
-      'Articles connect with listings, images, resources, and other content types so deeper reading can lead naturally into related discovery.',
-      'Use this section to browse thoughtful posts, revisit useful writing, and move into supporting content when you want more context.',
+      'This route remains reachable by direct URL for compatibility with the wider platform, but it is not part of the Mindful Lotus reading experience.',
+      'If you were looking for essays, the archive is the place to be.',
     ],
-    links: [
-      { label: 'Explore listings', href: '/listings' },
-      { label: 'Open images', href: '/images' },
-      { label: 'Browse resources', href: '/pdf' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   classified: {
-    title: 'Classifieds, offers, and timely updates',
+    title: 'Archived surface',
     paragraphs: [
-      'Classified posts help surface offers, notices, deals, and time-sensitive opportunities in a faster-scanning format.',
-      'They work well alongside articles, listings, and profiles, making it easier to connect short-term posts with more structured content.',
-      'Browse by category to find announcements quickly, then continue into related sections when you need more detail.',
+      'This route remains reachable by direct URL for compatibility, but the Mindful Lotus publication publishes essays, not notices.',
     ],
-    links: [
-      { label: 'Business listings', href: '/listings' },
-      { label: 'Read articles', href: '/articles' },
-      { label: 'View profiles', href: '/profile' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   image: {
-    title: 'Image-led posts and visual stories',
+    title: 'Archived surface',
     paragraphs: [
-      'Images take the lead in this section through galleries, visual posts, and story-led content where imagery carries the experience.',
-      'These posts connect with articles, listings, and other sections so visuals can act as entry points into deeper content.',
-      'Browse the latest visual updates, then continue into related stories or supporting pages for more context.',
+      'Photography occasionally accompanies an essay, but we do not publish a standalone gallery.',
     ],
-    links: [
-      { label: 'Read articles', href: '/articles' },
-      { label: 'Explore listings', href: '/listings' },
-      { label: 'Open classifieds', href: '/classifieds' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   profile: {
-    title: 'Profiles, identities, and public pages',
+    title: 'Archived surface',
     paragraphs: [
-      'Profiles capture the identity behind a business, creator, brand, or project and help visitors understand who is behind the content they are exploring.',
-      'These pages work as trust anchors across the site and connect naturally with stories, listings, documents, and other post types.',
-      'Browse profiles to understand people and brands more clearly, then continue into related content from the same source.',
+      'Contributor pages are folded into each essay; there is no separate directory on the publication.',
     ],
-    links: [
-      { label: 'Open listings', href: '/listings' },
-      { label: 'Read articles', href: '/articles' },
-      { label: 'Browse images', href: '/images' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   sbm: {
-    title: 'Curated links and bookmarked resources',
+    title: 'Archived surface',
     paragraphs: [
-      'This section collects useful links, references, tools, and saved resources in a text-first browsing format.',
-      'Bookmarks stay connected to the rest of the platform, making it easier to move from a saved link into related stories, listings, or resources.',
-      'Use this section to organize helpful sources and discover connected content without leaving the broader site experience.',
+      'The editors keep a private reading list; it is not a public surface on this site.',
     ],
-    links: [
-      { label: 'Browse articles', href: '/articles' },
-      { label: 'Explore listings', href: '/listings' },
-      { label: 'Open PDFs', href: '/pdf' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   pdf: {
-    title: 'PDFs, documents, and downloadable files',
+    title: 'Archived surface',
     paragraphs: [
-      'The PDF library hosts reports, guides, downloadable files, and longer-form document resources that support reading and discovery.',
-      'These resources work alongside stories, listings, and profiles, helping document-style content stay connected to the rest of the platform.',
-      'Browse by category to find relevant files quickly, then continue into related sections when you want more context.',
+      'Printable editions are sent by email to subscribers, not hosted as a public library here.',
     ],
-    links: [
-      { label: 'Read articles', href: '/articles' },
-      { label: 'See listings', href: '/listings' },
-      { label: 'Explore profiles', href: '/profile' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   social: {
-    title: 'Short updates and community signals',
+    title: 'Archived surface',
     paragraphs: [
-      'Short updates add quick signals that keep activity flowing across the platform.',
-      'They work well with stories, listings, and resources by helping visitors move from brief updates into deeper content.',
-      'Use these posts as lightweight entry points into the broader site experience.',
+      'Quick updates happen on the editor’s letter, not in a social feed.',
     ],
-    links: [
-      { label: 'Open listings', href: '/listings' },
-      { label: 'Read articles', href: '/articles' },
-      { label: 'View PDFs', href: '/pdf' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   comment: {
-    title: 'Comments and contextual responses',
+    title: 'Letters to the editor',
     paragraphs: [
-      'Comments surface responses connected directly to articles and help keep discussion close to the writing it belongs to.',
-      'This layer adds perspective and reaction without needing a separate standalone content format.',
-      'Use comments as supporting context beneath stories, then continue exploring related content from the same topic area.',
+      'Responses are collected under each essay. This surface remains available by URL but is not part of the home-page rhythm.',
     ],
-    links: [
-      { label: 'Explore articles', href: '/articles' },
-      { label: 'View listings', href: '/listings' },
-      { label: 'See classifieds', href: '/classifieds' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
   org: {
-    title: 'Organizations, teams, and structured entities',
+    title: 'Archived surface',
     paragraphs: [
-      'Organization pages provide structured identity surfaces for teams, brands, communities, and agencies.',
-      'Used with listings, stories, profiles, and resources, they help create stronger structure across the platform.',
-      'Connect organization pages with related content to build a clearer and more unified site presence.',
+      'Mindful Lotus is a small independent publication; there is no organization directory on the site.',
     ],
-    links: [
-      { label: 'Business listings', href: '/listings' },
-      { label: 'Read articles', href: '/articles' },
-      { label: 'PDF library', href: '/pdf' },
-    ],
+    links: [{ label: 'Read the essays', href: '/articles' }],
   },
 }
