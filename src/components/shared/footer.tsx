@@ -30,6 +30,7 @@ const footerLinks = {
     { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '/blog' },
     { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' },
   ],
   resources: [
     { name: 'Help Center', href: '/help' },
