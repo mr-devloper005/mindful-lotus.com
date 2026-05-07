@@ -36,11 +36,6 @@ export function NavbarOverride() {
     []
   )
 
-  const issue = useMemo(() => {
-    const now = new Date()
-    const season = ['Winter', 'Spring', 'Summer', 'Autumn'][Math.floor(((now.getMonth() + 1) % 12) / 3)]
-    return `${season} ${now.getFullYear()} · Vol. ${(now.getFullYear() - 2020).toString().padStart(2, '0')}`
-  }, [])
 
   const navItems = [
     { label: 'Essays', href: enabledArticleTask?.route || '/articles' },
@@ -61,7 +56,6 @@ export function NavbarOverride() {
       {/* Editorial top strip: issue info + small actions. */}
       <div className="border-b border-[color:var(--ml-rule)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-[color:var(--ml-sage-deep)] sm:px-6 lg:px-8">
-          <span className="hidden sm:inline">{issue}</span>
           <span className="sm:hidden">Mindful Lotus</span>
           <div className="flex items-center gap-5">
             <Link href="/articles" className="ml-link hidden sm:inline-block">
@@ -84,9 +78,6 @@ export function NavbarOverride() {
               style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
             >
               {SITE_CONFIG.name}
-            </span>
-            <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.42em] text-[color:var(--ml-sage-deep)]">
-              — A contemplative reading room —
             </span>
           </Link>
 

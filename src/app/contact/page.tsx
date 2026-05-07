@@ -51,6 +51,8 @@ export default function ContactPage() {
   const { recipe } = getFactoryState()
   const productKind = getProductKind(recipe)
   const tone = getTone(productKind)
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || 'hello@mindful-lotus.com'
+  const mailtoHref = `mailto:${contactEmail}`
   const lanes =
     productKind === 'directory'
       ? [
@@ -85,6 +87,20 @@ export default function ContactPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Contact {SITE_CONFIG.name}</p>
             <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">A support page that matches the product, not a generic contact form.</h1>
             <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>Tell us what you are trying to publish, fix, or launch. We will route it through the right lane instead of forcing every request into the same support bucket.</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={mailtoHref}
+                className={`inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold ${tone.action}`}
+              >
+                Email us
+              </a>
+              <a
+                href={mailtoHref}
+                className={`text-sm ${tone.muted} underline underline-offset-4`}
+              >
+                {contactEmail}
+              </a>
+            </div>
             <div className="mt-8 space-y-4">
               {lanes.map((lane) => (
                 <div key={lane.title} className={`rounded-[1.6rem] p-5 ${tone.soft}`}>
@@ -98,6 +114,9 @@ export default function ContactPage() {
 
           <div className={`rounded-[2rem] p-7 ${tone.panel}`}>
             <h2 className="text-2xl font-semibold">Send a message</h2>
+            <p className={`mt-2 text-sm leading-7 ${tone.muted}`}>
+              Prefer email? Write to <a href={mailtoHref} className="font-medium underline underline-offset-4">{contactEmail}</a>.
+            </p>
             <form className="mt-6 grid gap-4">
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Your name" />
               <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />

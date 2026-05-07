@@ -111,7 +111,7 @@ export function FooterOverride() {
         <div className="ml-rule my-10" />
 
         <div className="flex flex-col items-start justify-between gap-3 text-[11px] uppercase tracking-[0.32em] text-[color:var(--ml-ink-soft)]/70 sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} {SITE_CONFIG.name}. Printed in cream and ink.</span>
+          <span>© {SITE_CONFIG.name}. Printed in cream and ink.</span>
           <span>Hand-set in Fraunces &amp; Manrope · Made for slow afternoons.</span>
         </div>
       </div>

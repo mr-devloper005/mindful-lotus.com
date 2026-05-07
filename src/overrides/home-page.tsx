@@ -11,21 +11,6 @@ import type { SitePost } from '@/lib/site-connector'
 
 export const HOME_PAGE_OVERRIDE_ENABLED = true
 
-const seasonLabel = () => {
-  const now = new Date()
-  const season = ['Winter', 'Spring', 'Summer', 'Autumn'][
-    Math.floor(((now.getMonth() + 1) % 12) / 3)
-  ]
-  return `${season} ${now.getFullYear()}`
-}
-
-const formatDate = (iso?: string | null) => {
-  if (!iso) return ''
-  const date = new Date(iso)
-  if (Number.isNaN(date.getTime())) return ''
-  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-}
-
 const getAuthor = (post: SitePost) => {
   const content = (post.content && typeof post.content === 'object' ? post.content : {}) as Record<
     string,
@@ -113,7 +98,7 @@ export async function HomePageOverride() {
         <section className="relative">
           <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
             <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.36em] text-[color:var(--ml-sage-deep)]">
-              <span>Issue · {seasonLabel()}</span>
+              <span>Issue</span>
               <span className="hidden sm:inline">{siteContent.hero.badge}</span>
             </div>
             <div className="ml-rule-strong my-6" />
@@ -122,7 +107,7 @@ export async function HomePageOverride() {
               {/* Left: typographic hero */}
               <div className="lg:col-span-7">
                 <span className="ml-chip ml-chip-sage">
-                  <Leaf className="h-3 w-3" aria-hidden="true" /> Cover essay · {seasonLabel()}
+                  <Leaf className="h-3 w-3" aria-hidden="true" /> Cover essay
                 </span>
                 <h1
                   className="ml-serif-display mt-5 text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.02]"
@@ -194,7 +179,7 @@ export async function HomePageOverride() {
                       </div>
                       <div className="p-6">
                         <p className="ml-eyebrow">
-                          {formatDate(cover.publishedAt) || 'Cover essay'} · {readingMinutes(cover)} min read
+                          Cover essay · {readingMinutes(cover)} min read
                         </p>
                         <h2 className="ml-serif-display mt-3 text-2xl leading-tight sm:text-3xl">
                           {cover.title}
@@ -271,7 +256,7 @@ export async function HomePageOverride() {
                         </p>
                       ) : null}
                       <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-sage-deep)]">
-                        — {getAuthor(post)} · {formatDate(post.publishedAt)}
+                        — {getAuthor(post)}
                       </p>
                     </div>
                   </Link>
@@ -382,9 +367,6 @@ export async function HomePageOverride() {
                       </div>
                       <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-sage-deep)]">
                         — {getAuthor(post)}
-                      </span>
-                      <span className="hidden text-[11px] uppercase tracking-[0.3em] text-[color:var(--ml-ink-soft)]/60 sm:inline">
-                        {formatDate(post.publishedAt) || `${readingMinutes(post)} min`}
                       </span>
                     </Link>
                   </li>
