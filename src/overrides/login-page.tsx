@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Suspense, useEffect, useState, type FormEvent } from 'react'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ export const LOGIN_PAGE_OVERRIDE_ENABLED = true
 
 /**
  * Editorial sign-in page.
- * The form is wired to the existing `useAuth` context — successful
+ * The form is wired to the existing `useAuth` context â€” successful
  * credentials persist to localStorage via the untouched auth logic.
  */
 export function LoginPageOverride() {
@@ -29,7 +29,7 @@ function LoginShellFallback() {
     <div className="min-h-screen text-[color:var(--ml-ink)]">
       <NavbarShell />
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
-        <div className="ml-eyebrow">Opening the reading room…</div>
+        <div className="ml-eyebrow">Opening the reading roomâ€¦</div>
       </div>
       <Footer />
     </div>
@@ -72,7 +72,7 @@ function LoginInner() {
 
     try {
       await login(trimmedEmail, password)
-      setSuccess('Signed in — redirecting you to the reading room.')
+      setSuccess('Signed in â€” redirecting you to the reading room.')
     } catch (err) {
       console.warn('[mindful-lotus/login] failed', err)
       setError('We could not sign you in just now. Please try again in a moment.')
@@ -86,23 +86,23 @@ function LoginInner() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Editorial aside */}
           <aside className="lg:col-span-5">
-            <p className="ml-eyebrow">Subscribers’ entrance</p>
+            <p className="ml-eyebrow">Subscribersâ€™ entrance</p>
             <h1 className="ml-serif-display mt-3 text-4xl leading-tight sm:text-5xl">
               Welcome back to the reading room.
             </h1>
             <p className="mt-5 text-[15px] leading-8 text-[color:var(--ml-ink-soft)]/90">
-              Sign in to bookmark essays, continue where you left off, and receive the Sunday
-              letter directly. Your session is kept locally — we never stash it on a server.
+              Sign in to bookmark reads, continue where you left off, and receive the Sunday
+              letter directly. Your session is kept locally â€” we never stash it on a server.
             </p>
 
             <ul className="mt-10 space-y-5 border-t border-[color:var(--ml-rule-strong)] pt-8">
               {[
-                ['01', 'Bookmark essays to finish another afternoon.'],
-                ['02', 'Continue reading from exactly where you paused.'],
-                ['03', 'Receive the Sunday letter without the noise.'],
-              ].map(([num, text]) => (
-                <li key={num} className="grid grid-cols-[48px_1fr] items-baseline gap-4">
-                  <span className="ml-counter text-xl">{num}</span>
+                'Bookmark reads to finish another afternoon.',
+                'Continue reading from exactly where you paused.',
+                'Receive the Sunday letter without the noise.',
+              ].map((text) => (
+                <li key={text} className="grid grid-cols-[24px_1fr] items-baseline gap-4">
+                  <span className="text-xl text-[color:var(--ml-brass)]">•</span>
                   <span className="text-[15px] leading-7 text-[color:var(--ml-ink-soft)]/90">{text}</span>
                 </li>
               ))}
@@ -110,7 +110,7 @@ function LoginInner() {
 
             <div className="mt-12 flex items-center gap-3 text-sm italic text-[color:var(--ml-sage-deep)]">
               <Feather className="h-4 w-4" aria-hidden="true" />
-              <span>“Read slowly. Underline often. Come back tomorrow.”</span>
+              <span>â€œRead slowly. Underline often. Come back tomorrow.â€</span>
             </div>
           </aside>
 
@@ -121,7 +121,7 @@ function LoginInner() {
                 <div>
                   <p className="ml-eyebrow">Sign in to {SITE_CONFIG.name}</p>
                   <h2 className="ml-serif-display mt-2 text-3xl">
-                    One line, one signature, you’re in.
+                    One line, one signature, youâ€™re in.
                   </h2>
                 </div>
                 <BookOpen className="h-8 w-8 shrink-0 text-[color:var(--ml-brass)]" aria-hidden="true" />
@@ -198,7 +198,7 @@ function LoginInner() {
                   {isLoading ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-                      Signing you in…
+                      Signing you inâ€¦
                     </>
                   ) : (
                     <>
@@ -211,7 +211,7 @@ function LoginInner() {
                 <p className="text-center text-sm text-[color:var(--ml-ink-soft)]/85">
                   New to the publication?{' '}
                   <Link href="/register" className="ml-link font-semibold">
-                    Join the reading list
+                    Join
                   </Link>
                 </p>
               </form>
