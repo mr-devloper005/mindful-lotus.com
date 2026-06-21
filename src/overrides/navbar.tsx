@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ export const NAVBAR_OVERRIDE_ENABLED = true
  *
  * The brief is deliberately quiet: wordmark + thin rule + a handful of
  * named links. No gradient pill buttons, no "Add Listing" CTA, no task
- * bar — those patterns belong to the directory sibling sites.
+ * bar â€” those patterns belong to the directory sibling sites.
  */
 export function NavbarOverride() {
   const pathname = usePathname()
@@ -38,9 +38,9 @@ export function NavbarOverride() {
 
 
   const navItems = [
-    { label: 'Essays', href: enabledArticleTask?.route || '/articles' },
+    { label: 'Articles', href: enabledArticleTask?.route || '/articles' },
     { label: 'About', href: '/about' },
-    { label: 'Archive', href: '/articles?view=archive' },
+    { label: 'Library', href: '/articles?view=archive' },
     { label: 'Contact', href: '/contact' },
   ]
 
@@ -84,6 +84,9 @@ export function NavbarOverride() {
           <div className="hidden items-center gap-3 md:flex">
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
+                <Link href="/dashboard/articles/new" className="ml-btn-solid">
+                  New Article
+                </Link>
                 <span className="ml-eyebrow">Signed in as {user?.name?.split(' ')[0] || 'reader'}</span>
                 <button
                   type="button"
@@ -99,9 +102,7 @@ export function NavbarOverride() {
                 <Link href="/login" className="ml-btn-ghost">
                   Sign in
                 </Link>
-                <Link href="/register" className="ml-btn-solid">
-                  Join the reading list
-                </Link>
+                <Link href="/register" className="ml-btn-solid">Join</Link>
               </>
             )}
           </div>
@@ -116,22 +117,19 @@ export function NavbarOverride() {
           </button>
         </div>
 
-        {/* Inline nav — Roman-numeral editorial bar. */}
+        {/* Inline nav â€” Roman-numeral editorial bar. */}
         <nav className="mt-6 hidden items-center gap-6 border-t border-[color:var(--ml-rule)] pt-3 text-sm md:flex">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
             return (
               <Link
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  'ml-link inline-flex items-baseline gap-2 text-[13px] font-semibold uppercase tracking-[0.28em]',
+                  'ml-link inline-flex items-baseline text-[13px] font-semibold uppercase tracking-[0.28em]',
                   isActive ? 'text-[color:var(--ml-ink)]' : 'text-[color:var(--ml-ink-soft)]/80'
                 )}
               >
-                <span className="ml-counter text-[11px]">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
                 {item.label}
               </Link>
             )
@@ -143,33 +141,35 @@ export function NavbarOverride() {
       {isMenuOpen && (
         <div className="border-t border-[color:var(--ml-rule)] bg-[color:var(--ml-paper-warm)] md:hidden">
           <div className="mx-auto max-w-6xl space-y-1 px-4 py-4 sm:px-6">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-between border-b border-[color:var(--ml-rule)] py-3 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--ml-ink)]"
               >
-                <span className="inline-flex items-center gap-3">
-                  <span className="ml-counter text-xs">{String(index + 1).padStart(2, '0')}</span>
-                  {item.label}
-                </span>
-                <span aria-hidden>→</span>
+                <span className="inline-flex items-center gap-3">{item.label}</span>
+                <span aria-hidden>â†’</span>
               </Link>
             ))}
 
             <div className="pt-4">
               {isAuthenticated ? (
-                <button type="button" onClick={logout} className="ml-btn-ghost w-full">
-                  Sign out
-                </button>
+                <div className="grid gap-2">
+                  <Link href="/dashboard/articles/new" onClick={() => setIsMenuOpen(false)} className="ml-btn-solid w-full">
+                    New Article
+                  </Link>
+                  <button type="button" onClick={logout} className="ml-btn-ghost w-full">
+                    Sign out
+                  </button>
+                </div>
               ) : (
                 <div className="grid gap-2">
                   <Link href="/login" onClick={() => setIsMenuOpen(false)} className="ml-btn-ghost w-full">
                     Sign in
                   </Link>
                   <Link href="/register" onClick={() => setIsMenuOpen(false)} className="ml-btn-solid w-full">
-                    Join the reading list
+                    Join
                   </Link>
                 </div>
               )}
@@ -180,3 +180,4 @@ export function NavbarOverride() {
     </header>
   )
 }
+

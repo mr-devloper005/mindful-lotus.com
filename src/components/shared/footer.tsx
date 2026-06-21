@@ -29,7 +29,6 @@ const footerLinks = {
     { name: 'Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Press', href: '/press' },
     { name: 'Contact', href: '/contact' },
   ],
   resources: [

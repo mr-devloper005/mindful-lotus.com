@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { ArrowRight, BookOpen, Feather, Leaf, PenLine } from 'lucide-react'
+﻿import Link from 'next/link'
+import { ArrowRight, BookOpen, Feather, PenLine } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 import { SchemaJsonLd } from '@/components/seo/schema-jsonld'
@@ -94,7 +94,7 @@ export async function HomePageOverride() {
       <SchemaJsonLd data={schemaData} />
 
       <main>
-        {/* ───── 1. Issue masthead + cover essay ───── */}
+        {/* â”€â”€â”€â”€â”€ 1. Issue masthead + cover essay â”€â”€â”€â”€â”€ */}
         <section className="relative">
           <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 lg:px-8 lg:pt-14">
             <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.36em] text-[color:var(--ml-sage-deep)]">
@@ -106,9 +106,6 @@ export async function HomePageOverride() {
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
               {/* Left: typographic hero */}
               <div className="lg:col-span-7">
-                <span className="ml-chip ml-chip-sage">
-                  <Leaf className="h-3 w-3" aria-hidden="true" /> Cover essay
-                </span>
                 <h1
                   className="ml-serif-display mt-5 text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.02]"
                   style={{ fontWeight: 500 }}
@@ -128,25 +125,7 @@ export async function HomePageOverride() {
                     {siteContent.hero.primaryCta.label}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link href={siteContent.hero.secondaryCta.href} className="ml-btn-ghost">
-                    {siteContent.hero.secondaryCta.label}
-                  </Link>
                 </div>
-
-                <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-[color:var(--ml-rule)] pt-8 text-left sm:max-w-xl">
-                  {[
-                    ['01', 'New essay each Sunday'],
-                    ['02', 'Edited for cadence'],
-                    ['03', 'Ad-free, unranked archive'],
-                  ].map(([num, label]) => (
-                    <div key={num}>
-                      <dt className="ml-counter text-2xl">{num}</dt>
-                      <dd className="mt-2 text-sm leading-6 text-[color:var(--ml-ink-soft)]/85">
-                        {label}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
 
               {/* Right: cover card (if we have an article) */}
@@ -178,9 +157,7 @@ export async function HomePageOverride() {
                         </div>
                       </div>
                       <div className="p-6">
-                        <p className="ml-eyebrow">
-                          Cover essay · {readingMinutes(cover)} min read
-                        </p>
+                        <p className="ml-eyebrow">{readingMinutes(cover)} min read</p>
                         <h2 className="ml-serif-display mt-3 text-2xl leading-tight sm:text-3xl">
                           {cover.title}
                         </h2>
@@ -190,7 +167,7 @@ export async function HomePageOverride() {
                           </p>
                         ) : null}
                         <div className="mt-5 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-sage-deep)]">
-                          <span>— {getAuthor(cover)}</span>
+                          <span>â€” {getAuthor(cover)}</span>
                           <span className="ml-link inline-flex items-center gap-1 text-[color:var(--ml-ink)]">
                             Read on
                             <ArrowRight className="h-3.5 w-3.5" />
@@ -207,9 +184,7 @@ export async function HomePageOverride() {
                       Mindful Lotus is preparing its opening issue. Come back on Sunday for the cover
                       essay, or leave your email in the footer and we will post it to you quietly.
                     </p>
-                    <Link href="/register" className="ml-link text-sm font-semibold">
-                      Join the reading list →
-                    </Link>
+                    <Link href="/register" className="ml-link text-sm font-semibold">Join</Link>
                   </div>
                 )}
               </div>
@@ -217,7 +192,7 @@ export async function HomePageOverride() {
           </div>
         </section>
 
-        {/* ───── 2. Table of contents ───── */}
+        {/* â”€â”€â”€â”€â”€ 2. Table of contents â”€â”€â”€â”€â”€ */}
         <section className="mt-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between gap-4 border-b border-[color:var(--ml-rule-strong)] pb-5">
@@ -227,9 +202,7 @@ export async function HomePageOverride() {
                   Table of contents
                 </h2>
               </div>
-              <Link href="/articles" className="ml-link text-sm font-semibold uppercase tracking-[0.28em]">
-                Open the archive →
-              </Link>
+              <span />
             </div>
 
             {secondary.length > 0 ? (
@@ -245,7 +218,7 @@ export async function HomePageOverride() {
                     </div>
                     <div>
                       <div className="ml-eyebrow">
-                        {getCategory(post)} · {readingMinutes(post)} min
+                        {getCategory(post)} Â· {readingMinutes(post)} min
                       </div>
                       <h3 className="ml-serif-display mt-2 text-2xl leading-snug transition-colors group-hover:text-[color:var(--ml-sage-deep)]">
                         {post.title}
@@ -256,7 +229,7 @@ export async function HomePageOverride() {
                         </p>
                       ) : null}
                       <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-sage-deep)]">
-                        — {getAuthor(post)}
+                        â€” {getAuthor(post)}
                       </p>
                     </div>
                   </Link>
@@ -271,7 +244,7 @@ export async function HomePageOverride() {
           </div>
         </section>
 
-        {/* ───── 3. Editor's letter / about intro ───── */}
+        {/* â”€â”€â”€â”€â”€ 3. Editor's letter / about intro â”€â”€â”€â”€â”€ */}
         <section className="mt-24">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
             <div className="lg:col-span-5">
@@ -287,7 +260,7 @@ export async function HomePageOverride() {
               <div className="mt-8 flex items-center gap-3">
                 <Feather className="h-5 w-5 text-[color:var(--ml-brass)]" aria-hidden="true" />
                 <span className="font-['Fraunces',serif] italic text-[color:var(--ml-ink)]">
-                  — Ananya &amp; Ishaan, editors
+                  â€” Ananya &amp; Ishaan, editors
                 </span>
               </div>
             </div>
@@ -330,7 +303,7 @@ export async function HomePageOverride() {
           </div>
         </section>
 
-        {/* ───── 4. Archive ribbon ───── */}
+        {/* â”€â”€â”€â”€â”€ 4. Archive ribbon â”€â”€â”€â”€â”€ */}
         {rest.length > 0 ? (
           <section className="mt-24">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -345,7 +318,7 @@ export async function HomePageOverride() {
                   href="/articles"
                   className="ml-link hidden text-sm font-semibold uppercase tracking-[0.28em] sm:inline-flex"
                 >
-                  Wander further →
+                  Wander further â†’
                 </Link>
               </div>
 
@@ -366,7 +339,7 @@ export async function HomePageOverride() {
                         </h3>
                       </div>
                       <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-sage-deep)]">
-                        — {getAuthor(post)}
+                        â€” {getAuthor(post)}
                       </span>
                     </Link>
                   </li>
@@ -376,7 +349,7 @@ export async function HomePageOverride() {
           </section>
         ) : null}
 
-        {/* ───── 5. Subscribe CTA ───── */}
+        {/* â”€â”€â”€â”€â”€ 5. Subscribe CTA â”€â”€â”€â”€â”€ */}
         <section className="mt-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="ml-card overflow-hidden">
@@ -389,24 +362,7 @@ export async function HomePageOverride() {
                   <p className="mt-5 max-w-lg text-base leading-8 text-[color:var(--ml-ink-soft)]/90">
                     {siteContent.cta.description}
                   </p>
-                  <form action="/register" className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-end">
-                    <label className="flex-1">
-                      <span className="ml-eyebrow">Email address</span>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="reader@example.com"
-                        className="ml-input mt-2"
-                      />
-                    </label>
-                    <button type="submit" className="ml-btn-solid">
-                      {siteContent.cta.primaryCta.label}
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </form>
-                  <p className="mt-3 text-xs text-[color:var(--ml-ink-soft)]/70">
-                    You can unsubscribe in a single click from the footer of any letter.
-                  </p>
+                  
                 </div>
 
                 <aside className="relative hidden overflow-hidden lg:block">
@@ -421,10 +377,10 @@ export async function HomePageOverride() {
                   <div className="relative z-10 flex h-full flex-col justify-between p-10 text-[color:var(--ml-paper)]">
                     <PenLine className="h-10 w-10 text-[color:var(--ml-brass-soft)]" aria-hidden="true" />
                     <blockquote className="font-['Fraunces',serif] text-2xl leading-[1.35] italic">
-                      “A sentence is a form of attention. Give it ten seconds more than you normally would.”
+                      â€œA sentence is a form of attention. Give it ten seconds more than you normally would.â€
                     </blockquote>
                     <div className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[color:var(--ml-brass-soft)]">
-                      — From an editor’s letter, Vol. 03
+                      â€” From an editorâ€™s letter, Vol. 03
                     </div>
                   </div>
                 </aside>
@@ -433,7 +389,7 @@ export async function HomePageOverride() {
           </div>
         </section>
 
-        {/* ───── 6. Archive tail / quiet exit ───── */}
+        {/* â”€â”€â”€â”€â”€ 6. Archive tail / quiet exit â”€â”€â”€â”€â”€ */}
         {archiveTail.length > 0 ? (
           <section className="mt-24">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -450,7 +406,7 @@ export async function HomePageOverride() {
                       {post.title}
                     </h3>
                     <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[color:var(--ml-ink-soft)]/70">
-                      — {getAuthor(post)}
+                      â€” {getAuthor(post)}
                     </p>
                   </Link>
                 ))}

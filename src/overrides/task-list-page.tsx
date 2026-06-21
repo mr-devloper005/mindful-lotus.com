@@ -275,7 +275,7 @@ export async function TaskListPageOverride({
         <section className="mt-16">
           <div className="flex items-end justify-between border-b border-[color:var(--ml-rule)] pb-4">
             <p className="ml-eyebrow">
-              {isArticle ? 'Archive run' : `All ${(taskConfig?.label || task).toLowerCase()}`}
+              {isArticle ? 'Latest entries' : `All ${(taskConfig?.label || task).toLowerCase()}`}
             </p>
             <span className="text-[11px] uppercase tracking-[0.3em] text-[color:var(--ml-ink-soft)]/60">
               {filteredPosts.length} on file

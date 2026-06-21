@@ -93,7 +93,7 @@ function RegisterInner() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Editorial aside */}
           <aside className="lg:col-span-5">
-            <p className="ml-eyebrow">Join the reading list</p>
+            <p className="ml-eyebrow">Join</p>
             <h1 className="ml-serif-display mt-3 text-4xl leading-tight sm:text-5xl">
               One letter a week. Nothing in between.
             </h1>

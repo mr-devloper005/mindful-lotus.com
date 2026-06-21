@@ -17,12 +17,12 @@ export const siteContent = {
       href: '/articles',
     },
     secondaryCta: {
-      label: 'Read the manifesto',
+      label: 'Learn more',
       href: '/about',
     },
     searchPlaceholder: 'Search essays, authors, and collections',
     focusLabel: 'This issue',
-    featureCardBadge: 'Cover essay',
+    featureCardBadge: '',
     featureCardTitle: 'A long essay on how to sit with a sentence before moving on to the next.',
     featureCardDescription:
       'Cover features rotate every Sunday. Older essays remain in the archive and hold their original reading experience.',
@@ -73,7 +73,7 @@ export const siteContent = {
     description:
       'No promotional emails, no tracking pixels, no resurfaced old posts. A single link to the new cover essay, sent once a week.',
     primaryCta: {
-      label: 'Join the reading list',
+      label: 'Join',
       href: '/register',
     },
     secondaryCta: {
